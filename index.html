@@ -1,160 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Emily ✨</title>
+  <meta charset="UTF-8">
+  <title>Emily 💙</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(120deg, #141e30, #243b55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
 
-body {
-  background: black;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
-}
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      padding: 45px;
+      border-radius: 25px;
+      max-width: 520px;
+      text-align: center;
+      animation: fadeIn 2s ease;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
 
-/* INTRO CINEMA */
-.intro {
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle, #111, #000);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  z-index: 10;
-  animation: fadeOut 2s ease 8s forwards;
-}
+    h1 {
+      font-size: 2.7rem;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
 
-.intro h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 52px;
-  letter-spacing: 4px;
-  animation: zoomIn 3s ease;
-}
+    p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-top: 15px;
+      opacity: 0.92;
+    }
 
-.intro p {
-  margin-top: 15px;
-  opacity: 0.7;
-}
+    .heart {
+      font-size: 2.8rem;
+      margin-top: 25px;
+      animation: pulse 1.6s infinite;
+    }
 
-@keyframes zoomIn {
-  from { transform: scale(0.7); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-@keyframes fadeOut {
-  to { opacity: 0; pointer-events: none; }
-}
-
-/* TEXTO CINEMATOGRÁFICO */
-.cinema {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px;
-}
-
-.cinema p {
-  font-size: 26px;
-  max-width: 800px;
-  line-height: 1.8;
-  animation: type 6s steps(60) forwards;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid white;
-}
-
-@keyframes type {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-/* CORAÇÕES */
-.heart {
-  position: fixed;
-  bottom: -20px;
-  font-size: 20px;
-  animation: float 6s linear infinite;
-}
-
-@keyframes float {
-  to {
-    transform: translateY(-110vh);
-    opacity: 0;
-  }
-}
-
-/* FINAL */
-.final {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: radial-gradient(circle, #ff4d6d, #1a0007);
-}
-
-.final h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 42px;
-}
-</style>
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.25); }
+      100% { transform: scale(1); }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="card">
+    <h1>Emily</h1>
 
-<!-- MÚSICA -->
-<audio autoplay loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3b5e0e6c4f.mp3">
-</audio>
+    <p>
+      Tudo começou em <strong>28 de novembro</strong>.<br>
+      Uma conversa simples, mas com um sentimento diferente.
+    </p>
 
-<!-- INTRO -->
-<div class="intro">
-  <h1>EMILY</h1>
-  <p>Uma história que virou amor</p>
-</div>
+    <p>
+      No dia <strong>11 de janeiro</strong>, eu tive certeza.<br>
+      Não era só mais alguém. Era você.
+    </p>
 
-<!-- TEXTO -->
-<section class="cinema">
-  <p>
-    Tudo começou em 28 de novembro.<br>
-    Algumas mensagens.<br>
-    Algumas risadas.<br>
-    E sem perceber…  <br>
-    você virou meu tudo.
-  </p>
-</section>
+    <p>
+      Esse site não é só código.<br>
+      É carinho, tempo e amor transformados em algo só seu.
+    </p>
 
-<!-- FINAL -->
-<section class="final">
-  <div>
-    <h2>
-      11 de janeiro não foi um dia qualquer.<br>
-      Foi o começo do nós.<br><br>
-      Emily, eu te amo.
-    </h2>
+    <div class="heart">💙</div>
   </div>
-</section>
-
-<script>
-// CORAÇÕES
-setInterval(() => {
-  const heart = document.createElement('div');
-  heart.className = 'heart';
-  heart.innerHTML = '❤️';
-  heart.style.left = Math.random() * 100 + 'vw';
-  heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
-  document.body.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 6000);
-}, 300);
-</script>
-
 </body>
 </html>
